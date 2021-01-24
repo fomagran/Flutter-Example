@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 //Command + S로 저장하고 실행할것
+//오류 해결해야함.
+// //Could not build the application for the simulator.
+// Error launching application on iPhone 12 Pro.
 
 void main() => runApp(MyApp());
 
