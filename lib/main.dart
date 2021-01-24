@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 //Command + S로 저장하고 실행할것
-//오류 해결해야함.
-// //Could not build the application for the simulator.
-// Error launching application on iPhone 12 Pro.
+//cmd Shift P 디바이스 바꿀 수 있음
+//hot reload 단축키는 cmd s
 
 void main() => runApp(MyApp());
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: "Fomagran",
       theme: ThemeData(
           //색상 정하기 blue에 마우스를 대면 색상을 구체적으로 정할 수 있음
-          primarySwatch: Colors.black87),
+          primarySwatch: Colors.blue),
       //앱이 정상적으로 실행됐을때 보여지는 경로
       home: MyHomePage(),
     );
@@ -29,13 +28,13 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       //앱바를 정함.
       appBar: AppBar(
-        title: Text("Fomagran's Flutter App"),
+        title: Text("Fomagran's App"),
       ),
       //body를 가운데로 정렬
       body: Center(
         //Column은 세로로 배치한다.
         child: Column(
-          children: <Widget>[Text("Hello"), Text("Hello"), Text("Hello")],
+          children: <Widget>[Text("Hello"), Text("Fomagran"), Text("Welcome")],
         ),
       ),
     );
