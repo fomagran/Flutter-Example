@@ -34,11 +34,36 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.amber[700],
       ),
       //horizontal 중앙에 배치
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
+          //padding leading값에 맞춰서 정렬하기
+          crossAxisAlignment: CrossAxisAlignment.start,
           //vertical 중앙에 배치하기
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Text("Hello"), Text("Hello"), Text("Hello")],
+          children: <Widget>[
+            Text(
+              "NAME",
+              style: TextStyle(
+                color: Colors.white,
+                //글자 간격주기
+                letterSpacing: 2.0,
+              ),
+            ),
+            //위젯간 간격주
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "FOMAGRAN",
+              style: TextStyle(
+                color: Colors.white,
+                //글자 간격주기
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
     );
