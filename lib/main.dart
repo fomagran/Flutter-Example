@@ -26,17 +26,19 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     //Scaffold는 요소를 다양하게 배치할 수 있도록 하는 발판
     return Scaffold(
-      //앱바를 정함.
-      appBar: AppBar(
-        title: Text("Fomagran's App"),
-      ),
-      //body를 가운데로 정렬
-      body: Center(
-        //Column은 세로로 배치한다.
-        child: Column(
-          children: <Widget>[Text("Hello"), Text("Fomagran"), Text("Welcome")],
+        //앱바를 정함.
+        appBar: AppBar(
+          title: Text("Fomagran's Apps"),
+          backgroundColor: Colors.redAccent,
         ),
-      ),
-    );
+        body: Padding(
+          //각 left,top,right,bottom패딩 정해주는 메소드
+          padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+          child: Column(
+            //vertical 중앙에 배치하기
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[Text("Hello"), Text("Hello"), Text("Hello")],
+          ),
+        ));
   }
 }
