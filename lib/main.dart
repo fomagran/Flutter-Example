@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 //Command + S로 저장하고 실행할것
 //cmd Shift P 디바이스 바꿀 수 있음
@@ -202,25 +203,60 @@ class MyHomePage extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
-            Builder(builder: (BuildContext ctx) {
-              return Center(
-                child: FlatButton(
-                  child: Text(
-                    "show me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  color: Colors.red,
-                  onPressed: () {
-                    Scaffold.of(ctx).showSnackBar(SnackBar(
-                      content: Text("Hello"),
-                    ));
-                  },
-                ),
-              );
-            }),
+            Row(
+              children: <Widget>[MySnackBar(), SizedBox(width: 60), MyToast()],
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+class MySnackBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: FlatButton(
+        child: Text(
+          "Snack Bar",
+          style: TextStyle(color: Colors.white),
+        ),
+        color: Colors.red,
+        onPressed: () {
+          Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text("show snack bar message"),
+          ));
+        },
+      ),
+    );
+  }
+}
+
+class MyToast extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: FlatButton(
+        onPressed: () {
+          showToast();
+        },
+        child: Text(
+          "Toast",
+          style: TextStyle(color: Colors.white),
+        ),
+        color: Colors.red,
+      ),
+    );
+  }
+}
+
+void showToast() {
+  Fluttertoast.showToast(
+      msg: "show toast",
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.red,
+      fontSize: 20,
+      textColor: Colors.white,
+      toastLength: Toast.LENGTH_SHORT);
 }
