@@ -34,6 +34,28 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Introduce"),
         backgroundColor: Colors.amber[700],
+        //왼쪽에 버튼 위치하려면 leading
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print("touch menu button");
+          },
+        ),
+        //오른쪽에 버튼 위치하려면 actions
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.shopping_cart_outlined),
+            onPressed: () {
+              print("touch shopping button");
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print("touch search button");
+            },
+          ),
+        ],
       ),
       //horizontal 중앙에 배치
       body: Padding(
