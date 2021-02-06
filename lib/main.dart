@@ -206,6 +206,7 @@ class MyHomePage extends StatelessWidget {
             Row(
               children: <Widget>[MySnackBar(), SizedBox(width: 60), MyToast()],
             ),
+            MyContainer()
           ],
         ),
       ),
@@ -259,4 +260,20 @@ void showToast() {
       fontSize: 20,
       textColor: Colors.white,
       toastLength: Toast.LENGTH_SHORT);
+}
+
+class MyContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          color: Colors.red,
+          width: 100,
+          height: 100,
+          child: Text("Container"),
+        ),
+      ],
+    );
+  }
 }
