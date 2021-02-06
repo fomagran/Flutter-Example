@@ -33,14 +33,8 @@ class MyHomePage extends StatelessWidget {
       //앱바를 정함.
       appBar: AppBar(
         title: Text("Introduce"),
+        centerTitle: true,
         backgroundColor: Colors.amber[700],
-        //왼쪽에 버튼 위치하려면 leading
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            print("touch menu button");
-          },
-        ),
         //오른쪽에 버튼 위치하려면 actions
         actions: <Widget>[
           IconButton(
@@ -56,6 +50,56 @@ class MyHomePage extends StatelessWidget {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundImage: AssetImage("assets/스폰지밥.png"),
+                ),
+                CircleAvatar(backgroundImage: AssetImage("assets/뚱이.jpeg")),
+              ],
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage("assets/fomagran.png"),
+                backgroundColor: Colors.white,
+              ),
+              accountEmail: Text("fomagran6@naver.com"),
+              accountName: Text("fomagran"),
+              onDetailsPressed: () {
+                print("arrow  touch");
+              },
+              decoration: BoxDecoration(
+                  color: Colors.amber[700],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40))),
+            ),
+            ListTile(
+                leading: Icon(Icons.home, color: Colors.grey[850]),
+                title: Text("home"),
+                onTap: () {
+                  print("home touched");
+                },
+                trailing: Icon(Icons.add)),
+            ListTile(
+                leading: Icon(Icons.settings, color: Colors.grey[850]),
+                title: Text("Setting"),
+                onTap: () {
+                  print(" Setting touched");
+                },
+                trailing: Icon(Icons.add)),
+            ListTile(
+                leading: Icon(Icons.question_answer, color: Colors.grey[850]),
+                title: Text("Q&A"),
+                onTap: () {
+                  print("Q&A touched");
+                },
+                trailing: Icon(Icons.add))
+          ],
+        ),
       ),
       //horizontal 중앙에 배치
       body: Padding(
@@ -131,7 +175,7 @@ class MyHomePage extends StatelessWidget {
                 Text(
                   "iOS and Swift",
                   style: TextStyle(fontSize: 16, letterSpacing: 1),
-                )
+                ),
               ],
             ),
             Row(
