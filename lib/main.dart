@@ -51,6 +51,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -198,6 +199,25 @@ class MyHomePage extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(
+              height: 60,
+            ),
+            Builder(builder: (BuildContext ctx) {
+              return Center(
+                child: FlatButton(
+                  child: Text(
+                    "show me",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Colors.red,
+                  onPressed: () {
+                    Scaffold.of(ctx).showSnackBar(SnackBar(
+                      content: Text("Hello"),
+                    ));
+                  },
+                ),
+              );
+            }),
           ],
         ),
       ),
