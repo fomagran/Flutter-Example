@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //디버그 모드 띠 없애기
+      debugShowCheckedModeBanner: false,
       title: "Fomagran",
       theme: ThemeData(
           //색상 정하기 blue에 마우스를 대면 색상을 구체적으로 정할 수 있음
@@ -30,7 +32,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.amber[800],
       //앱바를 정함.
       appBar: AppBar(
-        title: Text("Fomagran's Apps"),
+        title: Text("Introduce"),
         backgroundColor: Colors.amber[700],
       ),
       //horizontal 중앙에 배치
@@ -41,6 +43,17 @@ class MyHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           //vertical 중앙에 배치하기
           children: <Widget>[
+            Center(
+                child: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: AssetImage("assets/fomagran.png"),
+                    radius: 60)),
+            Divider(
+              height: 60,
+              thickness: 0.5,
+              color: Colors.grey[100],
+              endIndent: 30,
+            ),
             Text(
               "NAME",
               style: TextStyle(
@@ -62,6 +75,62 @@ class MyHomePage extends StatelessWidget {
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              "Fomagran Age",
+              style: TextStyle(
+                color: Colors.white,
+                //글자 간격주기
+                letterSpacing: 2.0,
+              ),
+            ),
+            //위젯간 간격주
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "26",
+              style: TextStyle(
+                color: Colors.white,
+                //글자 간격주기
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(width: 10),
+                Text(
+                  "iOS and Swift",
+                  style: TextStyle(fontSize: 16, letterSpacing: 1),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(width: 10),
+                Text(
+                  "Flutter and Dart",
+                  style: TextStyle(fontSize: 16, letterSpacing: 1),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(width: 10),
+                Text(
+                  "Firebase",
+                  style: TextStyle(fontSize: 16, letterSpacing: 1),
+                )
+              ],
             ),
           ],
         ),
