@@ -271,7 +271,13 @@ class MyContainer extends StatelessWidget {
           color: Colors.red,
           width: 100,
           height: 100,
-          child: Text("Container"),
+          child: Center(
+            child: Text("Container"),
+          ),
+          //패딩은 안쪽의 간격
+          padding: EdgeInsets.all(10),
+          //마진은 바깥쪽 간격
+          margin: EdgeInsets.all(20),
         ),
       ],
     );
