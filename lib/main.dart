@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ScreenB.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_app/ScreenA.dart';
+import 'package:flutter_app/ScreenB.dart';
 
 //Command + S로 저장하고 실행할것
 //cmd Shift P 디바이스 바꿀 수 있음
 //hot reload 단축키는 cmd s
+
+//페이지 이동시 해당 dart파일을 import 해줘야 한다.
 
 void main() => runApp(MyApp());
 
@@ -203,10 +208,14 @@ class MyHomePage extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
+            Row(children: <Widget>[
+              ScreenAButton(),
+              SizedBox(width: 30),
+              ScreenBButton()
+            ]),
             Row(
               children: <Widget>[MySnackBar(), SizedBox(width: 60), MyToast()],
             ),
-            MyContainer()
           ],
         ),
       ),
@@ -262,24 +271,24 @@ void showToast() {
       toastLength: Toast.LENGTH_SHORT);
 }
 
-class MyContainer extends StatelessWidget {
+class ScreenAButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          color: Colors.red,
-          width: 100,
-          height: 100,
-          child: Center(
-            child: Text("Container"),
-          ),
-          //패딩은 안쪽의 간격
-          padding: EdgeInsets.all(10),
-          //마진은 바깥쪽 간격
-          margin: EdgeInsets.all(20),
-        ),
-      ],
-    );
+    return RaisedButton(
+        child: Text("Go screen A page"),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) => ScreenA()));
+        });
+  }
+}
+
+class ScreenBButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+        child: Text("Go screen B page"),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) => ScreenB()));
+        });
   }
 }
