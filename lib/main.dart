@@ -9,9 +9,10 @@ void main() => runApp(
           title: Text("I Am Rich"),
           backgroundColor: Colors.black38,
         ),
-        body: Image(
-          image: NetworkImage(
-              'https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg'),
+        body: Center(
+          child: Image(
+            image: AssetImage('images/diamond.png'),
+          ),
         ),
       )),
     );
