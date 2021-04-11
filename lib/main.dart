@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       backgroundColor: Colors.teal,
       body: SafeArea(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
             radius: 50.0,
@@ -31,48 +32,43 @@ class MyApp extends StatelessWidget {
                 fontSize: 20,
                 color: Colors.teal.shade100,
               )),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.phone,
-                  color: Colors.teal,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "+82 10 2240 6112",
-                  style: TextStyle(
-                      color: Colors.teal, fontFamily: "Timmana", fontSize: 20),
-                )
-              ],
+          SizedBox(
+            width: 150,
+            height: 20.0,
+            child: Divider(
+              color: Colors.teal.shade100,
             ),
           ),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.email,
-                  color: Colors.teal,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "fomagran6@naver.com",
-                  style: TextStyle(
-                      color: Colors.teal, fontFamily: "Timmana", fontSize: 20),
-                )
-              ],
-            ),
-          )
+          Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "+82 10 2240 6112",
+                    style: TextStyle(
+                        color: Colors.teal,
+                        fontFamily: "Timmana",
+                        fontSize: 20),
+                  ))),
+          Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "fomagran6@naver.com",
+                    style: TextStyle(
+                        color: Colors.teal,
+                        fontFamily: "Timmana",
+                        fontSize: 20),
+                  )))
         ],
       )),
     ));
