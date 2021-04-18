@@ -21,15 +21,19 @@ class DicePage extends StatelessWidget {
         children: <Widget>[
           //이미지 첨부 이렇게 줄여서 쓸수도 있음.
           Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset("images/dice1.png"),
-          )),
+            child: FlatButton(
+                onPressed: () {
+                  print("button1");
+                },
+                child: Image.asset("images/dice1.png")),
+          ),
           Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset("images/dice1.png"),
-          )),
+            child: FlatButton(
+                onPressed: () {
+                  print("button2");
+                },
+                child: Image.asset("images/dice1.png")),
+          ),
         ],
       ),
     );
