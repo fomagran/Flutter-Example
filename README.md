@@ -1,16 +1,12 @@
 # xylophone
 
-A new Flutter project.
+실로폰으로 소리내보는 프로젝트
 
-## Getting Started
+## What I've learned?
 
-This project is a starting point for a Flutter application.
+pub에서 오픈소스 패키지 사용하는법
 
-A few resources to get you started if this is your first Flutter project:
+audioplayer 패키지 사용해서 소리내는법
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Expaned 메소드 이용해서 코드 간결하게 하는법
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
