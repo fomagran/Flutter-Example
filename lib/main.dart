@@ -4,7 +4,20 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String phoneNumber = "+82 10 2240 6112";
+
+  void changePhoneNumber() {
+    setState(() {
+      phoneNumber = "+82 10 1234 5678";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,7 +61,7 @@ class MyApp extends StatelessWidget {
                     color: Colors.teal,
                   ),
                   title: Text(
-                    "+82 10 2240 6112",
+                    "$phoneNumber",
                     style: TextStyle(
                         color: Colors.teal,
                         fontFamily: "Timmana",
@@ -68,7 +81,26 @@ class MyApp extends StatelessWidget {
                         color: Colors.teal,
                         fontFamily: "Timmana",
                         fontSize: 20),
-                  )))
+                  ))),
+          FlatButton(
+            onPressed: () {
+              changePhoneNumber();
+              print("$phoneNumber");
+            },
+            child: Card(
+                color: Colors.blueAccent,
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: ListTile(
+                    title: Center(
+                  child: Text(
+                    "Change PhoneNumber!",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Timmana",
+                        fontSize: 20),
+                  ),
+                ))),
+          )
         ],
       )),
     ));
