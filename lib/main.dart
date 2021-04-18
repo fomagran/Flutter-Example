@@ -14,6 +14,10 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
+  //변수 적용하기
+  var leftDiceNumber = 1;
+  var rightDiceNumber = 2;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -25,14 +29,14 @@ class DicePage extends StatelessWidget {
                 onPressed: () {
                   print("button1");
                 },
-                child: Image.asset("images/dice1.png")),
+                child: Image.asset("images/dice$leftDiceNumber.png")),
           ),
           Expanded(
             child: FlatButton(
                 onPressed: () {
                   print("button2");
                 },
-                child: Image.asset("images/dice1.png")),
+                child: Image.asset("images/dice$rightDiceNumber.png")),
           ),
         ],
       ),
