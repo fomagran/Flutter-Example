@@ -1,16 +1,17 @@
 # dicee
 
-A new Flutter project.
+주사위 랜덤으로 나오게 하는 프로젝트
 
-## Getting Started
+## What I've learned?
 
-This project is a starting point for a Flutter application.
+랜덤함수으로 숫자만드는법
 
-A few resources to get you started if this is your first Flutter project:
+함수 따로 만들어서 적용하는법
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+플랫버튼 만들어서 클릭하는법
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/47676921/115134931-8a6a1280-a04f-11eb-8967-4ecf14860797.png"  width="200" height="400">
+
+
+
+
