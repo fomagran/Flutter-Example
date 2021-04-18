@@ -1,16 +1,3 @@
 # dicee
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Simulator Screen Shot - iPhone 12 Pro - 2021-04-18 at 14 08 02](https://user-images.githubusercontent.com/47676921/115134931-8a6a1280-a04f-11eb-8967-4ecf14860797.png)
