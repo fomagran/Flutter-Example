@@ -18,6 +18,7 @@ class DicePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
+        //이미지 첨부 이렇게 줄여서 쓸수도 있음.
         Expanded(child: Image.asset("images/dice1.png")),
         Expanded(child: Image.asset("images/dice1.png")),
       ],
