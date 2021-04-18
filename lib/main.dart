@@ -14,61 +14,35 @@ class MyApp extends StatelessWidget {
     player.play('note$soundNumber.wav');
   }
 
+  Expanded setButton(Color color, int soundNumber) {
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        onPressed: () {
+          playSound(soundNumber);
+        },
+        child: null,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
-        child: Column(children: <Widget>[
-          FlatButton(
-            color: Colors.red,
-            onPressed: () {
-              playSound(1);
-            },
-            child: null,
-          ),
-          FlatButton(
-            color: Colors.orange,
-            onPressed: () {
-              playSound(2);
-            },
-          ),
-          FlatButton(
-            color: Colors.yellow,
-            onPressed: () {
-              playSound(3);
-            },
-            child: null,
-          ),
-          FlatButton(
-            color: Colors.green,
-            onPressed: () {
-              playSound(4);
-            },
-            child: null,
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              playSound(5);
-            },
-            child: null,
-          ),
-          FlatButton(
-            color: Colors.indigo,
-            onPressed: () {
-              playSound(6);
-            },
-            child: null,
-          ),
-          FlatButton(
-            color: Colors.purple,
-            onPressed: () {
-              playSound(7);
-            },
-            child: null,
-          ),
-        ]),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              setButton(Colors.red, 1),
+              setButton(Colors.orange, 2),
+              setButton(Colors.yellow, 3),
+              setButton(Colors.green, 4),
+              setButton(Colors.blue, 5),
+              setButton(Colors.indigo, 6),
+              setButton(Colors.purple, 7),
+            ]),
       ),
     ));
   }
