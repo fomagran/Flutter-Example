@@ -13,10 +13,15 @@ void main() {
   ));
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
   //변수 적용하기
-  var leftDiceNumber = 1;
-  var rightDiceNumber = 2;
+  int leftDiceNumber = 1;
+  int rightDiceNumber = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,9 @@ class DicePage extends StatelessWidget {
           Expanded(
             child: FlatButton(
                 onPressed: () {
-                  print("button1");
+                  setState(() {
+                    leftDiceNumber = 5;
+                  });
                 },
                 child: Image.asset("images/dice$leftDiceNumber.png")),
           ),
