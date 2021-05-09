@@ -46,7 +46,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  questionList.questions[questionNumber].questionText,
+                  questionList.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -67,18 +67,10 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
               onPressed: () {
-                print(questionNumber);
-
-                if (questionList.questions[questionNumber].questionAnswer ==
-                    true) {
-                  scoreKeeper.add(Icon(Icons.check, color: Colors.green));
-                } else {
-                  scoreKeeper.add(Icon(Icons.close, color: Colors.red));
-                }
+                if (questionList.getQuestionAnswer() == false) {
+                } else {}
                 setState(() {
-                  if (questionNumber < 2) {
-                    questionNumber++;
-                  }
+                  questionList.nextQuestion();
                 });
               },
             ),
@@ -96,18 +88,11 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
               onPressed: () {
-                print(questionNumber);
-                if (questionList.questions[questionNumber].questionAnswer ==
-                    false) {
-                  scoreKeeper.add(Icon(Icons.check, color: Colors.green));
-                } else {
-                  scoreKeeper.add(Icon(Icons.close, color: Colors.red));
-                }
-                if (questionNumber < 3) {
-                  setState(() {
-                    questionNumber++;
-                  });
-                }
+                if (questionList.getQuestionAnswer() == false) {
+                } else {}
+                setState(() {
+                  questionList.nextQuestion();
+                });
               },
             ),
           ),
