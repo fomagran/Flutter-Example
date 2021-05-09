@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() {
   runApp(Quizzler());
@@ -28,6 +29,18 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Widget> scoreKeeper = [];
+  Question q1 = Question(q: "주원이의 성별은 여자이다.", a: true);
+  Question q2 = Question(q: "쭈워니는 엄청 귀엽다.", a: true);
+  Question q3 = Question(q: "쭈워니 핸드폰은 아이폰 12pro이다.", a: false);
+
+  List<Question> questions = [
+    Question(q: "주원이의 성별은 여자이다.", a: true),
+    Question(q: "쭈워니는 엄청 귀엽다.", a: true),
+    Question(q: "쭈워니 핸드폰은 아이폰 12pro이다.", a: false)
+  ];
+
+  int questionNumber = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,7 +53,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  'This is where the question text will go',
+                  questions[questionNumber].questionText,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -61,8 +74,15 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
               onPressed: () {
-                setState(() {
+                if (questions[questionNumber].questionAnswer == true) {
                   scoreKeeper.add(Icon(Icons.check, color: Colors.green));
+                } else {
+                  scoreKeeper.add(Icon(Icons.close, color: Colors.red));
+                }
+                setState(() {
+                  if (questionNumber < 2) {
+                    questionNumber++;
+                  }
                 });
               },
             ),
@@ -80,8 +100,15 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
               onPressed: () {
-                setState(() {
+                if (questions[questionNumber].questionAnswer == false) {
+                  scoreKeeper.add(Icon(Icons.check, color: Colors.green));
+                } else {
                   scoreKeeper.add(Icon(Icons.close, color: Colors.red));
+                }
+                setState(() {
+                  if (questionNumber < 2) {
+                    questionNumber++;
+                  }
                 });
               },
             ),
