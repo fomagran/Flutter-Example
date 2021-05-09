@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'questionList.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuestionList questionList = QuestionList();
 
@@ -32,7 +33,32 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Widget> scoreKeeper = [];
 
-  int questionNumber = 0;
+  void checkAnswer(bool pick) {
+    setState(() {
+      if (questionList.isFinished() == true) {
+        Alert(
+          context: context,
+          title: 'Finished!',
+          desc: 'You\'ve reached the end of the quiz.',
+        ).show();
+        questionList.reset();
+        scoreKeeper = [];
+      } else {
+        if (questionList.getQuestionAnswer() == pick) {
+          scoreKeeper.add(Icon(
+            Icons.check,
+            color: Colors.green,
+          ));
+        } else {
+          scoreKeeper.add(Icon(
+            Icons.close,
+            color: Colors.red,
+          ));
+        }
+        questionList.nextQuestion();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +82,6 @@ class _QuizPageState extends State<QuizPage> {
               ),
             )),
         Expanded(
-          flex: 5,
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: TextButton(
@@ -67,17 +92,12 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
               onPressed: () {
-                if (questionList.getQuestionAnswer() == false) {
-                } else {}
-                setState(() {
-                  questionList.nextQuestion();
-                });
+                checkAnswer(true);
               },
             ),
           ),
         ),
         Expanded(
-          flex: 5,
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: TextButton(
@@ -88,11 +108,7 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
               onPressed: () {
-                if (questionList.getQuestionAnswer() == false) {
-                } else {}
-                setState(() {
-                  questionList.nextQuestion();
-                });
+                checkAnswer(false);
               },
             ),
           ),
