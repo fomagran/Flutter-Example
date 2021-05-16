@@ -1,16 +1,13 @@
 # bmi_calcaulator
 
-A new Flutter project.
+BMI 계산해주는 어플리케이션
 
-## Getting Started
+## What I've learned?
 
-This project is a starting point for a Flutter application.
+테마 적용하는법   
+클래스 초기화하는법   
+슬라이더 사용하는법
+다른 페이지로 푸쉬하고 팝하는법   
+다른 페이지에 데이터 넘기는법   
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/47676921/118400247-c66ab480-b69b-11eb-8914-bd8beb667cc3.gif"  width="200" height="400">
