@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
-
-const bottemContainerHeight = 80.0;
-const inactiveCardColor = Color(0xFF111328);
-const activeCardColor = Color(0xFF1D1E33);
-
-enum Gender {
-  male,
-  female,
-}
+import 'constants.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -18,9 +10,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
   Gender selectedGender;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +20,7 @@ class _InputPageState extends State<InputPage> {
           title: Text('BMI CALCULATOR'),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
                 child: Row(
@@ -64,11 +56,46 @@ class _InputPageState extends State<InputPage> {
               ],
             )),
             Expanded(
-                child: Row(
-              children: [
-                Expanded(child: ReusableCard(colour: activeCardColor)),
-              ],
-            )),
+              child: ReusableCard(
+                colour: activeCardColor,
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Height",
+                      style: labelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                        Text(
+                          height.toString(),
+                          style: numberTextStyle,
+                        ),
+                        Text(
+                          "cm",
+                          style: labelTextStyle,
+                        ),
+                      ],
+                    ),
+                    Slider(
+                      value: height.toDouble(),
+                      min: 120.0,
+                      max: 220.0,
+                      activeColor: Colors.red,
+                      inactiveColor: Colors.grey,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Expanded(
                 child: Row(
               children: [
