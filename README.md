@@ -86,4 +86,4 @@ async await Future로 비동기적으로 데이터 처리하는 법
 네비게이션 pop으로 데이터 넘기는 법
 
 
-<img src="https://user-images.githubusercontent.com/47676921/129524986-148d5c13-bda8-4722-8745-fb7755f84ce9.gif"  width="200" height="400">
+<img src="https://user-images.githubusercontent.com/47676921/129525099-fb46a89e-81f9-47bb-97b2-80b5d3d7c3a6.gif"  width="200" height="400">
