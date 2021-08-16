@@ -70,3 +70,20 @@ BMI 계산해주는 어플리케이션
 다른 페이지에 데이터 넘기는법   
 
 <img src="https://user-images.githubusercontent.com/47676921/118400247-c66ab480-b69b-11eb-8914-bd8beb667cc3.gif"  width="200" height="400">
+
+# Weahter
+
+현재 위치 날씨 띄우고 다른 도시 날씨 정보 띄우는 어플리케이션
+
+## What I've learned?
+
+http패키지 사용해서 api 데이터 받아오는 법  
+geolocator 패키지 사용해서 현재 위치 위도,경도 받아오는 법   
+json데이터 디코딩해서 객체로 변환하는 법
+spinkit패키지 사용해서 로딩화면 띄우는 법    
+async await Future로 비동기적으로 데이터 처리하는 법
+텍스트필드 커스터마이징 하는 법   
+네비게이션 pop으로 데이터 넘기는 법
+
+
+<img src="https://user-images.githubusercontent.com/47676921/129524986-148d5c13-bda8-4722-8745-fb7755f84ce9.gif"  width="200" height="400">
