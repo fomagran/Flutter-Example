@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather/utilities/constants.dart';
-import 'package:weather/services/weatherModel.dart';
+import 'package:weather/services/weather.dart';
 
 class LocationScreen extends StatefulWidget {
   LocationScreen({this.locationWeather});
@@ -53,10 +53,14 @@ class _LocationScreenState extends State<LocationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var weatherData = await weather.getWeatherData();
+                      updateUI(weatherData);
+                    },
                     child: Icon(
                       Icons.near_me,
                       size: 50.0,
+                      color: Colors.white,
                     ),
                   ),
                   TextButton(
@@ -64,6 +68,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,
+                      color: Colors.white,
                     ),
                   ),
                 ],
